@@ -43,7 +43,7 @@ class StudentController extends Controller
     public function delete($id){
       $student =student::find($id);
        $student->delete();
-      return View::make('index');
+      return View::make('add');
     }
 
     public function edit($id){

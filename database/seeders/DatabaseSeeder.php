@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\student;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,9 +15,21 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $faker = Faker::create();
+
+        for($i = 1 ; $i <= 10 ; $i++){
+            student::create([
+                'fname' => $faker->firstName,
+                'lname'  => $faker->lastName,
+                
+                'phone_number'     => $faker->phoneNumber,
+                'age' =>  $faker->numberBetween(0, 15),
+                'address'   => $faker->country
+
+            ]);
+        } 
+
+    
+    
     }
 }
