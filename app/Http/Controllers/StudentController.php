@@ -20,6 +20,18 @@ class StudentController extends Controller
   
   
     }
+     
+    public function home(){
+      
+      $number = student::count();
+
+      return View::make('dashboard') -> with('students',$number);
+
+
+
+    }
+
+
 
     public function store(Request $request){
           
@@ -43,7 +55,7 @@ class StudentController extends Controller
     public function delete($id){
       $student =student::find($id);
        $student->delete();
-      return View::make('add');
+      return redirect() -> route('view');
     }
 
     public function edit($id){
@@ -51,7 +63,7 @@ class StudentController extends Controller
 
      return View::make('update')
      ->with('student', $student);
-
+   
 
     }
     public function update(Request $request,$id){
@@ -63,11 +75,8 @@ class StudentController extends Controller
       $student->age = $request->input('age');
       $student->address = $request->input('adress');
       $student -> update();
-      $student = student::find($id);
-      return View::make('index')
-      ->with('students', $students);
-
-
+      $student = student::find($id); 
+      return redirect()->route('view');
 
     }
 

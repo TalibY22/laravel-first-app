@@ -13,8 +13,10 @@
   <div class="card-header">Total students </div>
   <div class="card-body">
     
-    <p class="card-text">{{students}}</p>
+    <p class="card-text">{{$students}}</p>
   </div>     
+           
+    
            
 
 

@@ -9,7 +9,7 @@
       
   <div class="card  bg-light mb-3">
   <div class="card-header text-center">All students</div>
-  <button>Add<i class="fa-solid fa-plus"></i></button>
+  
   <div class="card-body">
 
   
@@ -36,9 +36,19 @@
       <td>{{$student->address}}</td>
       <td>{{$student->created_at}}</td>
       <td>
-      <a href="{{route( 'delete',$student->id)}}"><i class="fa-solid fa-trash bg-danger"><a href="{{route( 'delete',$student->id)}}"></i></a>
+     
+      <a href="{{route ('delete',$student -> id)}}"><button type="button" class="btn btn-danger me-1 btn-sm" href="{{route('delete',$student->id)}}">
+      <i class="fa-solid fa-trash"></i>
+            </button>
+      
 
-      <a href="{{route( 'edit',$student->id)}}"><i class="fa-solid fa-pen-to-square"></i><a href="{{route( 'edit',$student->id)}}"></i></a>
+
+
+
+      <a href="{{route ('edit',$student -> id)}}"><button type="button" class="btn btn-primary me-1 btn-sm" href="{{route('edit',$student->id)}}">
+               
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
       
       <i class="fa-regular fa-eye"></i> 
 
